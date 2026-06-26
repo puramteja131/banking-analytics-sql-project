@@ -18,11 +18,11 @@ SELECT COUNT(*) AS total_loans FROM loans;
 SELECT COUNT(*) AS total_branches FROM branches;
 
 
--- Query 1: Customer Base Analysis – Total Customers
+-- Query 1: Customer Base Analysis –> Total Customers
 SELECT COUNT(*) AS total_customers
 FROM customers;
 
--- Query 2: Account Portfolio Analysis – Total Accounts
+-- Query 2: Account Portfolio Analysis –> Total Accounts
 
 SELECT COUNT(*) AS total_accounts
 FROM accounts;
@@ -50,7 +50,6 @@ FROM accounts
 GROUP BY ACCOUNT_STATUS;
 
 -- -- Query 7: Account Type Analysis –> Distribution of Account Types
-
 SELECT 
     ACCOUNT_TYPE, COUNT(*) AS account_count
 FROM
@@ -59,7 +58,6 @@ GROUP BY ACCOUNT_TYPE
 ORDER BY account_count DESC;
 
 -- Query 8: Branch Performance Analysis – Accounts Managed by Each Branch
-
 SELECT
     b.BRANCH_ID,
     COUNT(a.ACCOUNT_ID) AS total_accounts
@@ -72,15 +70,12 @@ ORDER BY total_accounts DESC;
 DESC transactions;
 desc customers;
 desc accounts;
-
-
--- Query 9: Customer Activity Analysis -> Top 10 Customers by Transaction Amount
-
+-- Query 9: Customer Transaction Analysis -> Top Customers by Number of Transactions
 SELECT
     c.CUSTOMER_ID,
     c.First_Name,
     c.Last_Name,
-    SUM(t.TRANSACTION_AMOUNT) AS total_transaction_amount
+    COUNT(*) AS total_transactions
 FROM customers c
 JOIN accounts a
     ON c.CUSTOMER_ID = a.CUSTOMER_ID
@@ -90,28 +85,9 @@ GROUP BY
     c.CUSTOMER_ID,
     c.First_Name,
     c.Last_Name
-ORDER BY total_transaction_amount DESC
+ORDER BY total_transactions DESC
 LIMIT 10;
 
-SELECT *
-FROM transactions
-LIMIT 5;
-
-show tables;
-
-SELECT
-    SUM(TRANSACTION_AMOUNT) AS total_amount
-FROM transactions;
-
--- Query 9: Branch Performance Analysis -> Average Opening Balance by Branch
-
-SELECT
-    BRANCH_ID,
-    COUNT(*) AS total_accounts,
-    AVG(OPENING_BALANCE) AS avg_opening_balance
-FROM accounts
-GROUP BY BRANCH_ID
-ORDER BY avg_opening_balance DESC;
 
 -- Query 10: Customer Segmentation Analysis -> Customers by Occupation
 SELECT
@@ -228,7 +204,6 @@ ORDER BY total_loan_amount DESC
 LIMIT 10;
 
 -- Query 20: Branch-wise Top Accounts by Opening Balance
-
 WITH ranked_accounts AS
 (
     SELECT
