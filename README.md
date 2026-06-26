@@ -50,7 +50,7 @@ The project uses five related banking tables:
 
 ## Project Outcome
 
-Developed 20 business-focused SQL queries to analyze customer behavior, account performance, loan exposure, and branch performance. The project demonstrates practical use of SQL for business intelligence and banking analytics in the BFSI domain.
+Developed 20 business-focused SQL queries to analyze customer behavior, account performance, transaction activity,loan exposure, and branch performance. The project demonstrates practical use of SQL for business intelligence and banking analytics in the BFSI domain.
 
 ## Repository Contents
 
