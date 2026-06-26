@@ -6,7 +6,7 @@ This project analyzes banking data across customers, accounts, transactions, loa
 
 ## Business Problem
 
-Analyze customer accounts, transactions, loans, and branch performance to identify high-value customers, understand transaction behavior, evaluate loan exposure, and support better business decisions.
+Analyze customer accounts, transactions, loans, and branch performance to identify high-value customers, understand transaction behavior,transaction activity, evaluate loan exposure, and support better business decisions.
 
 ## Dataset Information
 
